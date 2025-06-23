@@ -144,7 +144,7 @@ export default function SimpleView () {
                         </div>
                         <div className="bg-white rounded-lg p-4">
                             <p className="text-sm text-gray-700">Boarding starts in:</p>
-                            <p className="text-lg">55 minutes </p>
+                            <p className="text-3xl font-black">55 minutes </p>
                         </div>
                         <div className="flex gap-4">
                             <div className="bg-white rounded-lg p-4 w-1/2">
@@ -158,11 +158,11 @@ export default function SimpleView () {
                             </div>
                         </div>
                     </div>
-                    <p className="text-sm text-gray-700">Don’t you fly today? </p>
+                    {/* <p className="text-sm text-gray-700">Don’t you fly today? </p>
                     <div className="flex gap-2 -mt-3">
                         <Image src={'/icons/calender.svg'} alt="c" width={20} height={20} className="w-5"/>
                         <span className="text-[#007AFF]">Select your flight date</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             {(step === 2 || step === 4) && <NavBar />}
