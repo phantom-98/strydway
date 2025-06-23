@@ -12,7 +12,7 @@ export default function Flights () {
 
     return (
         <>
-        <div className={`fixed w-full h-full flex flex-col overflow-auto pb-20 duration-200 transition-all ${step > 1 ? '-translate-x-full' : ''}`}>
+        <div className={`fixed top-0 bottom-0 left-0 right-0 flex flex-col overflow-auto pb-20 duration-200 transition-all ${step > 1 ? '-translate-x-full' : ''}`}>
             <div className="flex justify-end">
                 <span className="text-blue-400 p-4">Edit</span>
             </div>
@@ -26,7 +26,7 @@ export default function Flights () {
             </div>
         </div>
 
-        <div className={`fixed w-full h-full flex flex-col duration-200 transition-all overflow-auto pb-20 ${step > 2 ? '-translate-x-full' : step < 2 ? 'translate-x-full' : ''}`}>
+        <div className={`fixed top-0 bottom-0 left-0 right-0 flex flex-col duration-200 transition-all overflow-auto pb-20 ${step > 2 ? '-translate-x-full' : step < 2 ? 'translate-x-full' : ''}`}>
             <div className="relative h-2/5">
                 <Image src={'/images/airport.webp'} alt="airport" width={640} height={640} className="h-full object-cover"/>
                 <div className="absolute top-0 bottom-0 left-0 right-0 bg-black mask-[linear-gradient(#0000_60%,#000C)]"></div>
