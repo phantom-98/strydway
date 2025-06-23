@@ -1,13 +1,11 @@
-import Flights from "@/components/flight";
-import NavBar from "@/components/navbar";
+import Find from "@/components/find";
 
 
 export default function Board () {
 
     return (
         <>
-            <Flights />
-            <NavBar />
+            <Find />
         </>
     )
 }

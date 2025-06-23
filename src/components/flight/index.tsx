@@ -31,8 +31,8 @@ export default function Flights () {
                 <Image src={'/images/airport.webp'} alt="airport" width={640} height={640} className="h-full object-cover"/>
                 <div className="absolute top-0 bottom-0 left-0 right-0 bg-black mask-[linear-gradient(#0000_60%,#000C)]"></div>
                 <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-between p-4">
-                    <div onClick={() => setStep(1)} className="sticky top-4"><Image src={'/icons/previous.svg'} alt="<" width={20} height={20} className="w-4"/></div>
-                    <div className="flex items-center gap-4 sticky top-16">
+                    <div onClick={() => setStep(1)} className="sticky top-4"><Image src={'/icons/previous.svg'} alt="<" width={20} height={20} className="w-4 z-10"/></div>
+                    <div className="flex items-center gap-4">
                         <div className="rounded-full border border-[#0A1D3D] bg-white size-16 p-1">
                             <Image src={'/logos/Lufthansa.svg'} alt="<" width={20} height={20} className="w-full h-full rounded-full"/>
                         </div>
@@ -75,6 +75,10 @@ export default function Flights () {
                     <div className="bg-white rounded-lg p-4">
                         <p className="text-sm text-gray-700">Departure Airport:</p>
                         <p className="text-lg">Munich International Airport Franz Josef Strauss </p>
+                    </div>
+                    <div className="bg-white rounded-lg p-4">
+                        <p className="text-sm text-gray-700">Boarding starts in:</p>
+                        <p className="text-lg">55 minutes </p>
                     </div>
                     <div className="flex gap-4">
                         <div className="bg-white rounded-lg p-4 w-1/2">
