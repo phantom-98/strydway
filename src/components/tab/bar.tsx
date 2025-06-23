@@ -30,7 +30,6 @@ export default function TabBar ({options, value, onChange, className}: TabBar) {
                 <div key={`tab_opt_${i}`} onClick={() => {
                     onChange(opt.id);
                     setIndex(i);
-                    console.log({opt, i})
                 }} style={{width: `calc(100%/${options.length})`}} className={`flex items-center justify-center gap-2 z-10 px-4`}>
                     {opt.icon && (
                         <Image src={opt.icon} alt={"i"} width={20} height={20} className="tab-icon"/>

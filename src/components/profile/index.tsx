@@ -17,9 +17,9 @@ export default function Profile () {
             <div>
                 <p className="text-sm text-gray-700 ml-4 leading-8">PROFILE</p>
                 <div className="rounded-lg bg-white pl-4">
-                    <input placeholder="Name" className="py-2 pr-2 w-full"/>
-                    <input placeholder="Surname" className="py-2 pr-2 w-full border-y border-gray-300"/>
-                    <input placeholder="Email" className="py-2 pr-2 w-full"/>
+                    <input placeholder="Name" className="py-2 pr-2 w-full outline-none"/>
+                    <input placeholder="Surname" className="py-2 pr-2 w-full outline-none border-y border-gray-300"/>
+                    <input placeholder="Email" className="py-2 pr-2 w-full outline-none"/>
                 </div>
             </div>
             <div>
