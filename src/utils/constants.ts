@@ -63,3 +63,35 @@ export const flights = [
         date: 'Mon 21 Mar, 2020'
     },
 ]
+
+export const searchData = [
+    {
+        logo: '/icons/flight-blue.svg',
+        title: 'Gate B12',
+        description: 'Level 2 - Terminal 1 - San Francisco International Airport'
+    }, {
+        logo: '/icons/flight-blue.svg',
+        title: 'Gate B13',
+        description: 'Level 2 - Terminal 1 - San Francisco International Airport'
+    }, {
+        logo: '/icons/flight-blue.svg',
+        title: 'Gate A2',
+        description: 'Level 2 - Terminal 1 - San Francisco International Airport'
+    }
+]
+
+export const pathData = [
+    {
+        direct: 'go-ahead', 
+        amt: '417 ft'
+    },{
+        direct: 'turn-right', 
+        amt: '92 ft'
+    },{
+        direct: 'turn-left', 
+        amt: '610 ft'
+    },{
+        direct: 'turn-left', 
+        amt: '10 ft'
+    },
+]

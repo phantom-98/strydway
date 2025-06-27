@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type TabItem = {
     id: string,
@@ -17,7 +17,12 @@ type TabBar = {
 }
 
 export default function TabBar ({options, value, onChange, className}: TabBar) {
-    const [index, setIndex] = useState(options.findIndex(opt => opt.id === value) || 0)
+    const [index, setIndex] = useState(options.findIndex(opt => opt.id === value) || 0);
+
+    useEffect(() => {
+        const i = options.findIndex(opt => opt.id === value);
+        i >= 0 && setIndex(i)
+    }, [value])
 
     return (
         <>
