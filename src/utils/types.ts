@@ -14,3 +14,8 @@ export interface IAirport {
     airport_name: string,
     iata_code: string
 }
+
+export type GeoPosition = {
+    latitude: number,
+    longitude: number
+}

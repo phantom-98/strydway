@@ -45,7 +45,7 @@ export default function SimpleView () {
         <>
         <div className="w-screen h-screen">
             <div className={`fixed top-0 left-0 bottom-0 right-0 flex flex-col bg-white px-6 pt-24 gap-16 duration-200 ${step > 1 ? '-translate-x-full' : ''}`}>
-                <Image src={'/images/plane.webp'} alt="P" width={640} height={1200} className="fixed bottom-0 left-0 right-0"/>
+                <Image src={'/images/plane.webp'} priority alt="P" width={640} height={1200} className="fixed bottom-0 left-0 right-0"/>
                 <div className="flex flex-col w-full gap-2 font-bold font-title z-10">
                     <p className="text-xl">Let’s find out how to get</p>
                     <p className="text-3xl">To The Plane!</p>
@@ -171,8 +171,8 @@ export default function SimpleView () {
                 {flight ? (
                     <>
                     <div className="relative h-2/5">
-                        <Image src={'/images/airport.webp'} alt="airport" width={640} height={640} className="h-full object-cover"/>
-                        <div className="absolute top-0 bottom-0 left-0 right-0 bg-black mask-[linear-gradient(#0000_60%,#000C)]"></div>
+                        <Image src={'/images/airport.webp'} priority alt="airport" width={640} height={640} className="h-full object-cover"/>
+                        <div className="absolute top-0 bottom-0 left-0 right-0 bg-black" style={{maskImage: `linear-gradient(#0000 60%,#000C)`}}></div>
                         <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-between p-4">
                             <div onClick={handleBack} className="sticky top-4"><Image src={'/icons/previous.svg'} alt="<" width={20} height={20} className="w-4 z-10"/></div>
                             <div className="flex items-center gap-4">

@@ -4,6 +4,9 @@ import TabBar from "../tab/bar";
 import Image from "next/image";
 import { pathData, searchData } from "@/utils/constants";
 import { Switch } from "../switch";
+import { GeoPosition } from "@/utils/types";
+import { getId } from "@/apis/mapsindoors";
+import IndoorsMap from "../map";
 
 
 
@@ -11,8 +14,21 @@ export default function Search () {
     const [tab, setTab] = useState<'search' | 'map' | 'itinerary'>('search');
     const [departure, setDeparture] = useState('')
     const [step, setStep] = useState<'search' | 'desparture' | 'go'>('search');
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('');
     const [avoid, setAvoid] = useState(true);
+    const [posFrom, setPosFrom] = useState<GeoPosition>({latitude:37.61593684499978, longitude:-122.3896589443288});
+    const [posTo, setPosTo] = useState<GeoPosition>();
+
+    useEffect(() => {
+        getId(posFrom.latitude, posFrom.longitude).then(data => console.log({data}))
+        const ptr = navigator.geolocation.watchPosition((pos) => {
+            console.log({pos})
+        });
+
+        return () => {
+            navigator.geolocation.clearWatch(ptr)
+        }
+    }, []);
     return (
         <>
         <div className="fixed top-0 left-0 right-0 bottom-0 flex flex-col">
@@ -55,8 +71,8 @@ export default function Search () {
                     </div>
                     
                 </div>
-                <div className={`absolute w-full h-full px-6 duration-200 ${tab === 'search' ? 'translate-x-full' : tab === 'map' ? '' : '-translate-x-full'}`}>
-                    Hello map
+                <div className={`absolute w-full h-full px-6 pt-1 pb-12 duration-200 ${tab === 'search' ? 'translate-x-full' : tab === 'map' ? '' : '-translate-x-full'}`}>
+                    <IndoorsMap />
                 </div>
                 <div className={`absolute w-full h-full px-6 duration-200 ${tab === 'itinerary' ? '' : 'translate-x-full'}`}>
                     <div className={`absolute w-full h-full duration-200 py-4 overflow-auto`}>
@@ -111,7 +127,7 @@ export function SearchInput ({defaultValue, onConfirm, placeholder, className}: 
                 if (e.key === 'Enter') {
                     onConfirm(value)
                 }
-            }} className="flex-1 outline-none px-2" placeholder={placeholder}/>
+            }} className="flex-1 outline-none px-2 bg-transparent" placeholder={placeholder}/>
             <Image onClick={() => onConfirm(value)} src={'/icons/star.svg'} alt="star" width={16} height={16} className="size-5"/>
         </div>
         </>

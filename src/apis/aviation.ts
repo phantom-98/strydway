@@ -38,7 +38,7 @@ export const getFlights = async (keyword: string): Promise<any[]> => {
 
 export const getAirlines = async (keyword: string): Promise<IAirline[]> => {
 
-    return api.get(`/flights?access_key=${accessKey}&search=${keyword}`)
+    return api.get(`/airlines?access_key=${accessKey}&search=${keyword}`)
         .then(res => res.data.data)
         .catch(err => [])
 }
@@ -50,7 +50,7 @@ export const getCities = async (keyword: string): Promise<ICity[]> => {
 }
 
 export const getAirports = async (keyword: string): Promise<IAirport[]> => {
-    return api.get(`/cities?access_key=${accessKey}&search=${keyword}`)
+    return api.get(`/airports?access_key=${accessKey}&search=${keyword}`)
         .then(res => res.data.data)
         .catch(err => []);
 }
